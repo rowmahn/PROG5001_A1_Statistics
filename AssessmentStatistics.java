@@ -57,6 +57,17 @@ public class AssessmentStatistics
         
         System.out.println ("The highest mark is "+ highestMark);
         System.out.println ("The lowest mark is "+ lowestMark);
+        
+        //Find Mean and Standard Deviation
+        float totalMark = 0;
+        float numberOfMarks = markList.length;
+        
+        for (float mark: markList) {
+            totalMark = totalMark + mark;
+        }
+        
+        float mean = totalMark / numberOfMarks;
+        System.out.println ("Mean: "+ mean);
     }
     
     //Function to check the valid marks between 0 & 30.
