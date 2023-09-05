@@ -42,6 +42,21 @@ public class AssessmentStatistics
         System.out.println ("Your assignment name is "+assignmentName);
         System.out.println ("Students' Mark: "+Arrays.toString(markList));
         
+        //Find highest and lowest mark
+        float highestMark = 0;
+        float lowestMark = 30;
+
+        for (float mark : markList) {
+            if (mark > highestMark) {
+                highestMark = mark;
+            } 
+            else if (mark < lowestMark) {
+                lowestMark = mark;
+            }
+        }
+        
+        System.out.println ("The highest mark is "+ highestMark);
+        System.out.println ("The lowest mark is "+ lowestMark);
     }
     
     //Function to check the valid marks between 0 & 30.
