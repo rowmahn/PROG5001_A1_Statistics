@@ -9,8 +9,7 @@
 
 import java.util.*;
 public class AssessmentStatistics
-{
-    
+{ 
     public AssessmentStatistics()
     {
         
@@ -18,14 +17,14 @@ public class AssessmentStatistics
     
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-        float[] markList = new float [30];
+        float[] markList = new float [5];
         
         //Read Assignment
         System.out.println ("Enter your assignment name: ");
         String assignmentName = sc.nextLine();
         
         //Input 30 different marks
-        for (int counter=0; counter<30; counter++){
+        for (int counter=0; counter<5; counter++){
             System.out.println ("Enter marks for student "+(counter+1));
             float mark = sc.nextFloat();
             
@@ -43,8 +42,8 @@ public class AssessmentStatistics
         System.out.println ("Students' Mark: "+Arrays.toString(markList));
         
         //Find highest and lowest mark
-        float highestMark = 0;
-        float lowestMark = 30;
+        float highestMark = markList[0];
+        float lowestMark = markList[0];
 
         for (float mark : markList) {
             if (mark > highestMark) {
@@ -65,9 +64,19 @@ public class AssessmentStatistics
         for (float mark: markList) {
             totalMark = totalMark + mark;
         }
-        
         float mean = totalMark / numberOfMarks;
-        System.out.println ("Mean: "+ mean);
+        
+        float sumOfSquaredDifference=0;
+        for (float mark : markList) {
+            float squaredDifference = (float)Math.pow(mark - mean, 2);
+            sumOfSquaredDifference = sumOfSquaredDifference + squaredDifference;
+        }
+
+        float variance = sumOfSquaredDifference / numberOfMarks;
+        float standardDeviation = (float)Math.sqrt(variance);
+
+        System.out.println("Mean: " + mean);
+        System.out.println("Standard Deviation: " + standardDeviation);
     }
     
     //Function to check the valid marks between 0 & 30.
