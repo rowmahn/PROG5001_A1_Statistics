@@ -17,14 +17,14 @@ public class AssessmentStatistics
     
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-        float[] markList = new float [5];
+        float[] markList = new float [30];
         
         //Read Assignment
         System.out.println ("Enter your assignment name: ");
         String assignmentName = sc.nextLine();
         
         //Input 30 different marks
-        for (int counter=0; counter<5; counter++){
+        for (int counter=0; counter<30; counter++){
             System.out.println ("Enter marks for student "+(counter+1));
             float mark = sc.nextFloat();
             
